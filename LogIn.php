@@ -14,6 +14,17 @@
                     Username: <input type="text" name="user" /> 
                     Password: <input type="password" name="password" /> 
                     <input type="submit" name="Log In"/> 
+                   <?php 
+                    error_reporting(E_ERROR);
+                    if(isset($_POST["user"])) {
+                        $text = $_POST["user"];
+                        chdir("Users\Team116");
+                        $username = file_get_contents ("username.txt");
+                        $password = file_get_contents ("password.txt");
+                        print $username;
+                        print $password;   
+                    }
+                    ?>  
                 </form> <br>
             <p>OR</p>
             <h1>Create An Account</h1>
@@ -21,14 +32,7 @@
                     Team Number: <input type="text" name="numberinput" />
                     Username: <input type="text" name="user" /> 
                     Password: <input type="password" name="password" /> 
-                    <input type="submit"/>
-                   
-                    <?php 
-                    if(isset($_POST["user"])) {
-                        $text = $_POST["user"];
-
-                    }
-                    ?>
+<input type="submit"/>
             </form>
             <br>
             <a href="index.html">Home</a>
