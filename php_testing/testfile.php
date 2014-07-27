@@ -8,9 +8,9 @@
     <body>s
         <p>
             <?php
-session_start();
-echo "Your session ID is ".session_id();
-setcookie("ID","PASSWORD" ,time() +3600, "/" ,"localhost"); 
+            session_start();
+            echo "Your session ID is ".session_id();
+            setcookie("ID","PASSWORD" ,time() +3600, "/" ,"localhost"); 
             // this line will get rid of error warnings, only use when this file is completely tested
             error_reporting(E_ERROR);
             if (isset($_POST['textbox'])) {
