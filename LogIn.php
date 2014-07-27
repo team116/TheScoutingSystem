@@ -23,6 +23,11 @@
                         $password = file_get_contents ("password.txt");
                         print $username;
                         print $password;   
+                        
+                        if($_POST["user"] == $username && $_POST["password"] == $password)
+                        {
+                            echo "Success!!!!";
+                        }
                     }
                     ?>  
                 </form> <br>
@@ -32,7 +37,7 @@
                     Team Number: <input type="text" name="numberinput" />
                     Username: <input type="text" name="user" /> 
                     Password: <input type="password" name="password" /> 
-<input type="submit"/>
+                    <input type="submit"/>
             </form>
             <br>
             <a href="index.html">Home</a>
