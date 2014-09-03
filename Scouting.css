@@ -5,7 +5,7 @@ body {
     background-size:cover ;
     background-repeat: no-repeat ;
     font-family: bitter ;
-    font-size: 20px ;
+    font-size: 1.5em;
     text-align: center;   
         
 }
@@ -13,7 +13,7 @@ body {
 p {
     font-family: bitter;
     color: #B25A5A ;
-    font-size: 8;
+    font-size: 1em;
     text-align: center;
 }
 
@@ -27,10 +27,33 @@ img {
     border: .2em solid #424242;
     background-color: #B20047;
     color: #800000;
-    font-size: 16px;
+    font-size: 1.3em;
     width: 4em;
     height: 2em;
     font-family: bitter;
     align-items: center;
-    
+    float: left;
+}
+
+#dataForm {
+    display: inline-block;
+    margin: 0 auto;
+    width: 70em;
+}
+ 
+.radioScale {
+    font-size: .75em;
+    text-align: 
+}
+.radioScale label {
+    display:inline-block;
+    text-align:center;
+    margin:0 0.2em;
+}
+
+.radioScale label input[type="radio"]{
+    display:block;
+    margin: auto;
+}
+
 }

@@ -1,40 +1,183 @@
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <script src="http://use.edgefonts.net/bitter:n4,i4,n7:all;lobster-two:n7,i4,i7,n4:all.js"></script>
-                <link type="text/css" rel="stylesheet" href="Scouting.css" />
-                <title>Scouting</title>
-            </head>
-            <body>
-
-                <p>This is the data entry page. Under construction</p>
-                <form>
-                <form action="" method="post">
-                    Team Number: <input type="text" name="TeamNumber" /><br><br>
-                    <input type="checkbox" value=1>Moved During Autonomous<br>
-                    <b>Autonomous Goals</b>
-                    <select name="Autonomous Goals">
-                    <option value=0>Zero</option>
-                    <option value=1>One</option>
-                    <option value=2>Two</option>
-                    <option value=3>Three</option>
-                    </select><br>
-                    <b>Autonomous Hot Goals</b>
-                    <select name="Autonomous Goals">
-                    <option value=0>Zero</option>
-                    <option value=1>One</option>
-                    <option value=2>Two</option>
-                    <option value=3>Three</option>
-                    </select><br>
-                    <br>
-                    <b>Teleop Goals</b>
-                    <form action="" method="post">
-                     <input type="text" name="numberinput" />   
-                </form><br>
-                    <br>
-                <form id="homeButton" action="index.html">
-                    <input type="submit" value="Home" />
-                </form>
-                
-            </body>
-        </html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://use.edgefonts.net/bitter:n4,i4,n7:all;lobster-two:n7,i4,i7,n4:all.js"></script>
+        <link type="text/css" rel="stylesheet" href="Scouting.css" />
+        <title>Scouting</title>
+    </head>
+    
+    <body>
+        <form id="homeButton" action="index.html">
+            <input type="submit" value="Home">
+        </form>
+        <form id="dataForm" action="" method="">
+            Team Number:
+            <input type="text" name="TeamNumber" size="4" maxlength="4" pattern="\d*">
+            <br>
+            Match Number:
+            <input type="text" name="MatchNumber" size="3" maxlength="3">
+            <br>
+            Allies:
+            <input type="text" name="Ally1" size="4" maxlength="4">
+            <input type="text" name="Ally2" size="4" maxlength="4">
+            <br>
+            Opponents:
+            <input type="text" name="Opponent1" size="4" maxlength="4">
+            <input type="text" name="Opponent2" size="4" maxlength="4">
+            <input type="text" name="Opponent3" size="4" maxlength="4">
+            <br>
+            <br>
+            Drive Performance
+            <br>
+            <div class="radioScale">
+                Bad
+                <label for="drivePerf0">
+                    <input type="radio" name="DrivePerformance" value="1" id="drivePerf0">1
+                </label>
+                <label for="drivePerf1">
+                    <input type="radio" name="DrivePerformance" value="2" id="drivePerf1">2
+                </label>
+                <label for="drivePerf2">
+                    <input type="radio" name="DrivePerformance" value="3" id="drivePerf2">3
+                </label>
+                <label for="drivePerf3">
+                    <input type="radio" name="DrivePerformance" value="4" id="drivePerf3">4
+                </label>
+                <label for="drivePerf4">
+                    <input type="radio" name="DrivePerformance" value="5" id="drivePerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Possesion Performance
+            <div class="radioScale">
+                Bad
+                <label for="possesionPerf0">
+                    <input type="radio" name="PossesionPerformance" value="1" id="possesionPerf0">1
+                </label>
+                <label for="possesionPerf1">
+                    <input type="radio" name="PossesionPerformance" value="2" id="possesionPerf1">2
+                </label>
+                <label for="possesionPerf2">
+                    <input type="radio" name="PossesionPerformance" value="3" id="possesionPerf2">3
+                </label>
+                <label for="possesionPerf3">
+                    <input type="radio" name="PossesionPerformance" value="4" id="possesionPerf3">4
+                </label>
+                <label for="possesionPerf4">
+                    <input type="radio" name="PossesionPerformance" value="5" id="possesionPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Pick-Up Performance
+            <div class="radioScale">
+                Bad
+                <label for="pickupPerf0">
+                    <input type="radio" name="PickUpPerformance" value="1" id="pickupPerf0">1
+                </label>
+                <label for="pickupPerf1">
+                    <input type="radio" name="PickUpPerformance" value="2" id="pickupPerf1">2
+                </label>
+                <label for="pickupPerf2">
+                    <input type="radio" name="PickUpPerformance" value="3" id="pickupPerf2">3
+                </label>
+                <label for="pickupPerf3">
+                    <input type="radio" name="PickUpPerformance" value="4" id="pickupPerf3">4
+                </label>
+                <label for="pickupPerf4">
+                    <input type="radio" name="PickUpPerformance" value="5" id="pickupPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Catching Performance
+            <div class="radioScale">
+                Bad
+                <label for="catchPerf0">
+                    <input type="radio" name="CatchingPerformance" value="1" id="pickupPerf0">1
+                </label>
+                <label for="catchPerf1">
+                    <input type="radio" name="CatchingPerformance" value="2" id="catchPerf1">2
+                </label>
+                <label for="catchPerf2">
+                    <input type="radio" name="CatchingPerformance" value="3" id="catchPerf2">3
+                </label>
+                <label for="catchPerf3">
+                    <input type="radio" name="CatchingPerformance" value="4" id="catchPerf3">4
+                </label>
+                <label for="catchPerf4">
+                    <input type="radio" name="CatchingPerformance" value="5" id="catchPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Passing Performance
+            <div class="radioScale">
+                Bad
+                <label for="passPerf0">
+                    <input type="radio" name="PassingPerformance" value="1" id="passPerf0">1
+                </label>
+                <label for="passPerf1">
+                    <input type="radio" name="PassingPerformance" value="2" id="passPerf1">2
+                </label>
+                <label for="passPerf2">
+                    <input type="radio" name="PassingPerformance" value="3" id="passPerf2">3
+                </label>
+                <label for="passPerf3">
+                    <input type="radio" name="PassingPerformance" value="4" id="passPerf3">4
+                </label>
+                <label for="passPerf4">
+                    <input type="radio" name="PassingPerformance" value="5" id="passPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Shooter Performance
+            <div class="radioScale">
+                Bad
+                <label for="shootPerf0">
+                    <input type="radio" name="PassingPerformance" value="1" id="shootPerf0">1
+                </label>
+                <label for="shootPerf1">
+                    <input type="radio" name="PassingPerformance" value="2" id="shootPerf1">2
+                </label>
+                <label for="shootPerf2">
+                    <input type="radio" name="PassingPerformance" value="3" id="shootPerf2">3
+                </label>
+                <label for="shootPerf3">
+                    <input type="radio" name="PassingPerformance" value="4" id="shootPerf3">4
+                </label>
+                <label for="shootPerf4">
+                    <input type="radio" name="PassingPerformance" value="5" id="shootPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Defense Performance
+            <div class="radioScale">
+                Bad
+                <label for="defPerf0">
+                    <input type="radio" name="PassingPerformance" value="1" id="shootPerf0">1
+                </label>
+                <label for="defPerf1">
+                    <input type="radio" name="PassingPerformance" value="2" id="shootPerf1">2
+                </label>
+                <label for="defPerf2">
+                    <input type="radio" name="PassingPerformance" value="3" id="shootPerf2">3
+                </label>
+                <label for="defPerf3">
+                    <input type="radio" name="PassingPerformance" value="4" id="shootPerf3">4
+                </label>
+                <label for="defPerf4">
+                    <input type="radio" name="PassingPerformance" value="5" id="shootPerf4">5
+                </label>
+                Good
+            </div>
+            
+            <br>
+            <input type="submit" value="Submit">
+            <br>
+        </form>
+    </body>
+</html>
