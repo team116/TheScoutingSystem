@@ -11,6 +11,7 @@
             <input type="submit" value="Home">
         </form>
         <form id="dataForm" action="" method="">
+            <h1>Match Scouting</h1>
             Team Number:
             <input type="text" name="TeamNumber" size="4" maxlength="4" pattern="\d*">
             <br>
@@ -158,23 +159,101 @@
             <div class="radioScale">
                 Bad
                 <label for="defPerf0">
-                    <input type="radio" name="PassingPerformance" value="1" id="shootPerf0">1
+                    <input type="radio" name="PassingPerformance" value="1" id="defPerf0">1
                 </label>
                 <label for="defPerf1">
-                    <input type="radio" name="PassingPerformance" value="2" id="shootPerf1">2
+                    <input type="radio" name="PassingPerformance" value="2" id="defPerf1">2
                 </label>
                 <label for="defPerf2">
-                    <input type="radio" name="PassingPerformance" value="3" id="shootPerf2">3
+                    <input type="radio" name="PassingPerformance" value="3" id="defPerf2">3
                 </label>
                 <label for="defPerf3">
-                    <input type="radio" name="PassingPerformance" value="4" id="shootPerf3">4
+                    <input type="radio" name="PassingPerformance" value="4" id="defPerf3">4
                 </label>
                 <label for="defPerf4">
-                    <input type="radio" name="PassingPerformance" value="5" id="shootPerf4">5
+                    <input type="radio" name="PassingPerformance" value="5" id="defPerf4">5
                 </label>
                 Good
             </div>
-            
+            <br>
+            Goalie Performance
+            <div class="radioScale">
+                Bad
+                <label for="goaliePerf0">
+                    <input type="radio" name="PassingPerformance" value="1" id="goaliePerf0">1
+                </label>
+                <label for="goaliePerf1">
+                    <input type="radio" name="PassingPerformance" value="2" id="goaliePerf1">2
+                </label>
+                <label for="goaliePerf2">
+                    <input type="radio" name="PassingPerformance" value="3" id="goaliePerf2">3
+                </label>
+                <label for="goaliePerf3">
+                    <input type="radio" name="PassingPerformance" value="4" id="goaliePerf3">4
+                </label>
+                <label for="goaliePerf4">
+                    <input type="radio" name="PassingPerformance" value="5" id="goaliePerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Hot Goal Performance
+            <div class="radioScale">
+                Bad
+                <label for="hgoalPerf0">
+                    <input type="radio" name="PassingPerformance" value="1" id="hgoalPerf0">1
+                </label>
+                <label for="hgoalPerf0">
+                    <input type="radio" name="PassingPerformance" value="2" id="hgoalPerf1">2
+                </label>
+                <label for="hgoalPerf0">
+                    <input type="radio" name="PassingPerformance" value="3" id="hgoalPerf2">3
+                </label>
+                <label for="hgoalPerf0">
+                    <input type="radio" name="PassingPerformance" value="4" id="hgoalPerf3">4
+                </label>
+                <label for="hgoalPerf0">
+                    <input type="radio" name="PassingPerformance" value="5" id="hgoalPerf4">5
+                </label>
+                Good
+            </div>
+            <br>
+            Team Strategic Skill
+            <br>
+            <textarea rows="10" cols="50" name="TeamStrategicSkillComments"></textarea>
+            <br>
+            Driver Performance
+            <br>
+            <textarea rows="10" cols="50" name="DriverPerformanceTextComments"></textarea>
+            <br>
+            Human Player Performance
+            <br>
+            <textarea rows="10" cols="50" name="HumanPlayerPerformanceTextComments"></textarea>
+            <h1>Autonomous Performance</h1>
+            Starting Location
+            <select name="autoStartLocation">
+                <option value="RedZone">Red Zone</option>
+                <option value="WhiteZone">White Zone</option>
+                <option value="BlueZone">Blue Zone</option>
+            </select>
+            <br>
+            High Goal Attempts: <input type="text" name="AutoHighGoalAttempts" size="2" maxlength="2"> Goals Made: <input type="text" name="autoHighGoalMade" size="2" maxlength="2">
+            <br>
+            Low Goal Attempts: <input type="text" name="AutoLowGoalAttempts" size="2" maxlength="2"> Goals Made: <input type="text" name="autoLowGoalMade" size="2" maxlength="2">
+            <br>
+            Hot Goals: <input type="text" name="AutoHotGoal" size="2" maxlength="2">
+            <br>
+            Mobility
+            <select name="autoMobility">
+                <option value="attempt">Attempt</option>
+                <option value="success">Success</option>
+                <option value="no">No</option>
+            </select>
+            <br>
+            <h2>Match Notes</h2>
+            <textarea rows="20" cols="75" name="MatchNotes"></textarea>
+            <br>
+            <br>
             <br>
             <input type="submit" value="Submit">
             <br>
