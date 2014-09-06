@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat ;
     font-family: lobster-two ;
     font-size: 1em ;
-    
+    background-attachment: fixed;
 }
 
 p {
@@ -39,7 +39,7 @@ p {
     font-family: bitter;
 }
 
-#aboutButton input {
+<!--#aboutButton input {
     display: block;
     border: .2em solid #424242;
     background-color: #B20047;
@@ -51,6 +51,7 @@ p {
     float: right;
     float: inherit;
 }   
+-->
 
 img {
     align-content: center;

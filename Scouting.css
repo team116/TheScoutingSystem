@@ -1,22 +1,19 @@
-
-
 body {
     background-image: url(http://i.imgur.com/gg3sCSU.jpg) ;
     background-size:cover ;
     background-repeat: no-repeat ;
     font-family: bitter ;
-    font-size: 1.5em;
-    text-align: center;   
-        
+    font-size: 170% ;
+    text-align: center;
+    background-attachment: fixed;
 }
 
 p {
     font-family: bitter;
     color: #B25A5A ;
-    font-size: 1em;
+    font-size: 200%;
     text-align: center;
 }
-
 
 img {
     align-content: center;
@@ -27,9 +24,8 @@ img {
     border: .2em solid #424242;
     background-color: #B20047;
     color: #800000;
-    font-size: 1.3em;
-    width: 4em;
-    height: 2em;
+    font-size: 100%;
+    width: 10%;
     font-family: bitter;
     align-items: center;
     float: left;
@@ -38,11 +34,12 @@ img {
 #dataForm {
     display: inline-block;
     margin: 0 auto;
-    width: 70em;
+    float: left;
+    width: 80%;
 }
  
 .radioScale {
-    font-size: .75em;
+    font-size: 60%;
     text-align: 
 }
 .radioScale label {
@@ -58,6 +55,4 @@ img {
 
 textarea {
     resize: none;
-}
-
 }
