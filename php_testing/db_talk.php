@@ -11,8 +11,9 @@
 			ini_set('display_errors', 1);  // ensure that faires will be seen
 			ini_set('display_startup_errors', 1); // display faires that didn't born
 			
-			require("/var/www/html/Database.php");
-
+			chdir("..");
+			require("Database.php");
+			
 			if (!isset($connection))
 			{
 	        	$connection = mysqli_connect("localhost", "root", "", "users");
