@@ -1,11 +1,11 @@
 <html>
     <head>
-        <form name="form 1" method="post" action="textbox.php">
+        <form name="form 1" method="post" action="">
             box: <input type="text" name="textbox" value="">
             <input type="submit" name="button">
         </form>
     </head>
-    <body>s
+    <body>
         <p>
             <?php
             session_start();
