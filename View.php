@@ -104,7 +104,7 @@
         {
         	$num_rows = $result->num_rows;
         	for ($x = 0; $x < $num_rows; $x++)
-        	{
+        	{ 
         		array_push($_SESSION["rows"], $result->fetch_assoc());
         		echo "        <div class=\"grid grid-pad\" id=\"match" . $_SESSION["rows"][$x]["match_num"] . "\">\n";
         		echo "            <div class=\"col-1-10\">\n"
