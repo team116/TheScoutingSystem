@@ -13,6 +13,31 @@
         <h1>View Data</h1>
         <p>Team: 116</p>
         <br>
+        <?php
+		/*
+		error_reporting(-1); // display all faires
+		ini_set('display_errors', 1);  // ensure that faires will be seen
+		ini_set('display_startup_errors', 1); // display faires that didn't born
+
+        // collect match data into array of rows
+        session_start();
+        $connection = mysqli_connect("localhost", "root", "", "scouting_testing");
+        $result = $connection->query("SELECT * FROM matches");
+        $_SESSION["rows"] = array();
+        if ($result)
+        {
+        	$num_rows = $result->num_rows;
+        	for ($x = 0; $x < $num_rows; $x++)
+        	{
+        		array_push($_SESSION["rows"], $result->fetch_assoc());
+        	}
+        }
+        else
+        {
+        	echo "Database connection failure.";
+        }
+        */
+        ?>
         <div class="grid grid-pad" id="header">
             <div class="col-1-10" id="header">
                 <article class="module">
@@ -65,55 +90,210 @@
                 </article>
             </div>
         </div>
+        <?php
+        error_reporting(-1); // display all faires
+		ini_set('display_errors', 1);  // ensure that faires will be seen
+		ini_set('display_startup_errors', 1); // display faires that didn't born
+
+        // collect match data into array of rows
+        session_start();
+        $connection = mysqli_connect("localhost", "root", "", "scouting_testing");
+        $result = $connection->query("SELECT * FROM matches");
+        $_SESSION["rows"] = array();
+        if ($result)
+        {
+        	$num_rows = $result->num_rows;
+        	for ($x = 0; $x < $num_rows; $x++)
+        	{
+        		array_push($_SESSION["rows"], $result->fetch_assoc());
+        		echo "        <div class=\"grid grid-pad\" id=\"match" . $_SESSION["rows"][$x]["match_num"] . "\">\n";
+        		echo "            <div class=\"col-1-10\">\n"
+				echo "                <article class=\"module\" id=\"matchNum\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"match_num\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"drivePerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"drive\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"possesionPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"possesion\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"pickupPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"pickup\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"catchingPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"catching\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"passingPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"passing\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"shootingPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"shooter\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"defensePerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"defense\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"goaliePerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"goalie\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+				echo "            <div class=\"col-1-10\">\n";
+				echo "                <article class=\"module\" id=\"hotgoalPerf\">\n";
+				echo "                    <p>\n";
+				echo "                        <?php\n";
+				echo "                        echo $_SESSION[\"rows\"][" . $x . "][\"hot_goal\"];\n";
+				echo "                        ?>\n";
+				echo "                    </p>\n";
+				echo "                </article>\n";
+				echo "            </div>\n";
+        		echo "        </div>";
+        	}
+        }
+        else
+        {
+        	echo "Database connection failure.";
+        }
+        ?>
         <div class="grid grid-pad" id="match1">
             <div class="col-1-10">
                 <article class="module" id="matchNum">
-                    <p>1</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["match_num"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="drivePerf">
-                    <p>4</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["drive"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="possesionPerf">
-                    <p>3</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["possesion"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="pickupPerf">
-                    <p>5</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["pickup"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="catchingPerf">
-                    <p>3</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["catching"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="passingPerf">
-                    <p>3</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["passing"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="shootingerf">
-                    <p>4</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["shooter"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="defensePerf">
-                    <p>4</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["defense"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="goaliePerf">
-                    <p>3</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["goalie"];
+	                    ?>
+                    </p>
                 </article>
             </div>
             <div class="col-1-10">
                 <article class="module" id="hotgoalPerf">
-                    <p>4</p>
+                    <p>
+	                    <?php
+	                    echo $_SESSION["rows"][0]["hot_goal"];
+	                    ?>
+                    </p>
                 </article>
             </div>
         </div>
