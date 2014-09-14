@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,40 +9,89 @@
     <body>
         <h1>Log in</h1>
         <!-- The action attribute will contain where to send the login-currently nowhere-->
-            <form action="" method="post">
+        <form action="" method="post">
+        Team: <input type="number" name="team"/> 
+        Password: <input type="password" name="password"/> 
+        <input type="submit" name="Log In"/> 
+        
+        <?php 
+        error_reporting(-1); // display all faires
+        ini_set('display_errors', 1);  // ensure that faires will be seen
 
-                
-                Username: <input type="text" name="user" /> 
-                Password: <input type="password" name="password" /> 
-                <input type="submit" name="Log In"/> 
-               <?php 
-                error_reporting(E_ERROR);
-                if(isset($_POST["user"])) {
-                    $text = $_POST["user"];
+        if(isset($_POST["team"]))
+        {
+            if ($_POST["team"] == "" || $_POST["password"] == "")
+            {
+                echo "Requires team number and password.";
+            }
+            else
+            {
+                $connection = mysqli_connect("localhost", "root", "", "users");
+                $result = $connection->query("SELECT * FROM teams WHERE number = ".$_POST["team"].";");
 
-                    // compatible with linux & windows when using the two commands
-                    chdir("Users");
-                    chdir("Team116");
-                    
-                    $username = file_get_contents ("username.txt");
-                    $password = file_get_contents ("password.txt");
-                    print $username;
-                    print $password;   
-                    
-                    if($_POST["user"] == $username && $_POST["password"] == $password)
+                if ($result->num_rows == 1)
+                {
+                    // TODO: read the hash algorithm & salt to be used from a file
+                    // if we are going to hide the hash algorithm in a file, we should implement constant time hashing & password checking
+                    $hash = hash("sha512", "salt".$_POST["password"]);
+                    $row = $result->fetch_assoc();
+
+                    if ($hash == $row["id"])
                     {
-                        echo "Success!!!!";
+                        $_SESSION["team"] = $_POST["team"];
+                        echo "Logged in!";
+                        //echo "<meta http-equiv=\"http-equiv\" content=\"" . $_SERVER["SERVER_NAME"] . "\"/>"; // redirect to main page
+                    }
+                    else
+                    {
+                        echo "Incorrect team number or password.";
                     }
                 }
-                ?>  
-            </form> <br>
+                else
+                {
+                    echo "Incorrect team number or password.";
+                }
+            }
+        }
+        ?>  
+        </form> <br>
         <p>OR</p>
         <h1>Create An Account</h1>
-            <form action="" method="post">
-                Team Number: <input type="text" name="numberinput" />
-                Username: <input type="text" name="user" /> 
-                Password: <input type="password" name="password" /> 
-                <input type="submit"/>
+        <form action="" method="post">
+            Team Number: <input type="number" name="new_team"/>
+            Password: <input type="password" name="new_password"/> 
+            <input type="submit"/>
+
+            <?php
+            error_reporting(-1); // display all faires
+            ini_set('display_errors', 1);  // ensure that faires will be seen
+            ini_set('display_startup_errors', 1); // display faires that didn't born
+
+            if (isset($_POST["new_team"])) {
+                $new_team = $_POST["new_team"];
+                $new_password = $_POST["new_password"];
+                if ($new_team == "" || $new_password == "")
+                {
+                    echo "Requires a team number and password.";
+                }
+                else
+                {
+                    $connection = mysqli_connect("localhost", "root", "", "users");
+                    $result = $connection->query("SELECT * FROM teams WHERE number = " . $new_team . ";");
+
+                    if ($result->num_rows == 0) // if that user doesn't already exist
+                    {
+                        // TODO: read the hash algorithm & salt to be used from a file
+                        // if we are going to hide the hash algorithm in a file, we should implement constant time hashing & password checking
+                        $connection->query("INSERT INTO teams VALUES (".$new_team.", '".hash("sha512", "salt".$new_password)."');");
+                    }
+                    else
+                    {
+                        echo "Sorry, that account is already taken.";
+                    }
+                }
+            }
+            ?>
         </form>
         <br>
         <a href="index.html">Home</a>
