@@ -1,0 +1,82 @@
+body {
+    background-image: url(http://i.imgur.com/gg3sCSU.jpg) ;
+    background-size:cover ;
+    background-repeat: no-repeat ;
+    font-family: lobster-two ;
+    font-size: 1em ;
+    background-attachment: fixed;
+}
+
+p {
+    font-family: bitter;
+    color: #B25A5A ;
+    font-size: 8;
+    text-align: center;
+}
+
+#userBanner {
+    font-family: bitter;
+    font-size: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 2em;
+    background-color: #D60B0B;
+}
+
+#userBanner input {
+    font-family: bitter;
+    font-size: 16px;
+    float: right;
+}
+
+#userBanner input {
+    font-family: bitter;
+    font-size: 16px;
+    float: right;
+}
+
+#mainButton input {
+    display: block;
+    border-radius: .5em;
+    border: .1em solid #B25A5A;
+    background-color: #A60000;
+    width: 5em;
+    height: 1.5em;
+    margin: auto;
+    margin-top: .4em;
+    text-align: center;
+    font-size: 8em;
+    font-family: lobster-two;
+}
+
+#loginButton input {
+    display: block;
+    border: .2em solid #424242;
+    background-color: #B20047;
+    color: #800000;
+    font-size: 16px;
+    width: 6em;
+    height: 3em;
+    font-family: bitter;
+}
+
+<!--#aboutButton input {
+    display: block;
+    border: .2em solid #424242;
+    background-color: #B20047;
+    color: #800000;
+    font-family: bitter;
+    font-size: 16px;
+    width: 6em;
+    height: 3em;
+    float: right;
+    float: inherit;
+}   
+-->
+
+img {
+    align-content: center;
+}
